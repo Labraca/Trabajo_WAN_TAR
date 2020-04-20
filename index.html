@@ -13,6 +13,42 @@ h5{
     font-size: 12pt;
     font-weight: normal;
 }
+table.paleBlueRows {
+  font-family: "Times New Roman", Times, serif;
+  border: 1px solid #FFFFFF;
+  width: 350px;
+  height: 200px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.paleBlueRows td, table.paleBlueRows th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 2px;
+}
+table.paleBlueRows tbody td {
+  font-size: 13px;
+}
+table.paleBlueRows tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.paleBlueRows thead {
+  background: #2B4DA4;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.paleBlueRows thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.paleBlueRows thead th:first-child {
+  border-left: none;
+}
+
+table.paleBlueRows tfoot td {
+  font-size: 14px;
+}
 </style>
 
 </head>
@@ -58,7 +94,10 @@ h5{
         Internet es una red global formada por muchas redes autonomas voluntariamente conectadas. Por ello, el internet no esta
         governado por una sola entidad, cada red contiene su propio mantenimiento e implementacion fisica.
         <br>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/1200px-Internet_map_1024.jpg" alt="Mapa parcial de internet basado en la información obtenida del sitio www.opte.org en 2005. Cada línea entre dos nodos representa el enlace entre dos direcciones IP, y su longitud es proporcional al retardo entre estos" style="width: 30%;">
+        <div style="margin-right: 30%;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/1200px-Internet_map_1024.jpg" alt="Mapa parcial de internet basado en la información obtenida del sitio www.opte.org en 2005. Cada línea entre dos nodos representa el enlace entre dos direcciones IP, y su longitud es proporcional al retardo entre estos" style="width: 25%;">
+        <p style="font-size: 9px;">Mapa parcial de internet basado en la información obtenida del sitio www.opte.org en 2005. Cada línea entre dos nodos representa el enlace entre dos direcciones IP, y su longitud es proporcional al retardo entre estos</p>
+        </div>
         <br>
         Las WAN pueden tienen varias formas fisica y logicamente; el proveedor puede tener una red cableada, satelital, etc.
         Las formas mas comunes de implementar una red WAN son:
@@ -86,6 +125,47 @@ h5{
         digitos redireccionamos la linea hasta el telefono al que queremos conectarnos. Este tipo de linea es bastante insegura pero barata dado la cantidad de suscriptores que contiene.
         <br>
         Para una empresa la linea mas buscada seria la arrendada dado su capacidad de telecomunicacion privada
-        pero debido a su coste hay que tener cuidado con ella. 
+        pero debido a su coste hay que tener cuidado con ella.
+        <br>
+        Dentro de las lineas WAN privadas podemos caracterizar estas tecnologias:
+        <br>
+        <table class="paleBlueRows">
+            <thead>
+            <tr>
+            <th>Tecnologías</th>
+            <th>Características</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>Lineas Arrendadas (T1/E1, etc)</td>
+            <td><ul><li>Se trata de una conexion punto a punto privada</li>
+            <li>Según donde se esté hay diferentes sistemas y velocidades estando en America la T y en Europa la E</li>
+            <li>Permite tan voz como datos</li></ul></td>
+            </tr>
+            <tr>
+            <td>Frame Relay</td>
+            <td><ul>
+                <li>La compañia proveedora utiliza este protocolo para redireccionar tramas a través de la red publica</li>
+                <li>Soporta velocidades de 45 Mbps en transmision de voz y datos</li>
+            </ul></td>
+            </tr>
+            <tr>
+            <td>MPLS</td>
+            <td><ul>
+                <li>Es una arquitectura multiprotocolo que maneja tanto como IPv4 como Frame Relay</li>
+                <li>Se vale de etiquetas que le dicen al router donde reenviar el paquete</li>
+                <li>A diferencia de las lineas arrendadas que reparten bits entre los sitios y frame relay que reparte tramas, esta opcion reparte los dos tipos</li>
+                <li>Como cliente uno puee conectarse a la nube mediante cualquier otra tecnologia (Ethernet,T1/E1,Frame Relay,etc..)</li>
+            </ul></td>
+            </tr>
+            <tr>
+            <td>VSAT</td>
+            <td><ul>
+                <li>A diferencia de los demas servicios que usan redes de cobre o fibra, este utiliza telecomunicaciones satelitales</li>
+            </ul></td>
+            </tr>
+            </tbody>
+            </table>
     </h5>
 </html>
