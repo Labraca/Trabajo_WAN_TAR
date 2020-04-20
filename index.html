@@ -1,22 +1,90 @@
-<h1>Tema	8:	WAN<h1>
-<h2>Contenidos:<h2>
-<h3><ul>
-    <li>8.1	Descripción	general	de	las	tecnologías	WAN.<ul>
-        <li> 8.1.1	Tecnologías	WAN:	Descripción	general.</li>
-    </ul></li>
-    <li>8.2.	Conexiones	punto	a	punto.<ul>
-        <li>8.2.1	Descripción	general	de	punto	a	punto	serie.</li>
-        <li>8.2.2	Operación	de	PPP.</li>
-        <li>8.2.3	Implementación	de	PPP.</li>
-        <li>8.2.4	Solución	de	problemas	de	conectividad	WAN.</li>
-    </ul></li>
-    <li> 8.3.	Conexiones	de	sucursal.<ul>
-        <li> 8.3.1	Conexiones	de	acceso	remoto.</li>
-        <li>8.3.2	PPPoE.</li>
-        <li>8.3.3	VPN.</li>
-        <li>8.3.4	GRE.</li>
-        <li>8.3.5	eBGP.</li>
-    </ul></li>
-    <li>8.4	Glosario.</li>
-    <li>8.5	Bibliografía.</li>
-</ul><h3>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+
+a{
+  color:black;
+}
+h5{
+    margin-left: 12pt;
+    font-size: 10pt;
+    font-weight: normal;
+}
+</style>
+
+</head>
+    <h1>Tema	8:	WAN</h1>
+        <h2>Contenidos:</h2>
+        <h3><ul>
+            <li><a href=#8-1>8.1	Descripción	general	de	las	tecnologías	WAN.</a><ul>
+                <li><a href="#8-1-1"> 8.1.1	Tecnologías	WAN:	Descripción	general.</a></li>
+            </ul></li>
+            <li>8.2.	Conexiones	punto	a	punto.<ul>
+                <li>8.2.1	Descripción	general	de	punto	a	punto	serie.</li>
+                <li>8.2.2	Operación	de	PPP.</li>
+                <li>8.2.3	Implementación	de	PPP.</li>
+                <li>8.2.4	Solución	de	problemas	de	conectividad	WAN.</li>
+            </ul></li>
+            <li> 8.3.	Conexiones	de	sucursal.<ul>
+                <li> 8.3.1	Conexiones	de	acceso	remoto.</li>
+                <li>8.3.2	PPPoE.</li>
+                <li>8.3.3	VPN.</li>
+                <li>8.3.4	GRE.</li>
+                <li>8.3.5	eBGP.</li>
+            </ul></li>
+            <li>8.4	Glosario.</li>
+            <li>8.5	Bibliografía.</li>
+        </ul></h3>
+    /-------------------------------------------------------------------------------------------/
+    <h2 id="8-1">8.1	Descripción	general	de	las	tecnologías	WAN.</h2>
+    <h5>
+        Las tecnologías WAN o de red de area amplia nacieron de la necesidad geologica
+        de interconectar redes LAN a una gran distancia. Cada vez se necesita más la capacidad 
+        de transmitir informacion a zonas mas lejanas que la red en la que uno se encuentre,
+        pero usar el mismo tipo de modelo para conectar, por ejemplo, una oficina con la sede situada
+        en otra ciudad y una computadora de una planta de la sede con otra en el mismo edificio seria
+        demasiado costoso. El internet se considera como WAN.
+    </h5>
+    <h3 id="8-1-1">8.1.1	Tecnologías	WAN:	Descripción	general.</h3>   
+    <h5>
+        Generalmente las tecnologías WAN son propiedad de un proveedor de servicios (ISP)
+        con el que se contrata la utilizacion de sus redes. Para conectar las redes de dos
+        paises seria muy costoso hacerlo por medio de cable por ello se necesitan estas tecnologias de 
+        area extensa.
+        <br>
+        Internet es una red global formada por muchas redes autonomas voluntariamente conectadas. Por ello, el internet no esta
+        governado por una sola entidad, cada red contiene su propio mantenimiento e implementacion fisica.
+        <br>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map_1024.jpg/1200px-Internet_map_1024.jpg" alt="Mapa parcial de internet basado en la información obtenida del sitio www.opte.org en 2005. Cada línea entre dos nodos representa el enlace entre dos direcciones IP, y su longitud es proporcional al retardo entre estos" style="width: 50%;">
+        <br>
+        Las WAN pueden tienen varias formas fisica y logicamente; el proveedor puede tener una red cableada, satelital, etc.
+        Las formas mas comunes de implementar una red WAN son:
+            <ul>
+                <li>Punto a punto: la simple conexion entre dos dispositivos. Esta implementacion los dos dispositivos
+                    funcionan como receptor y emisor de datos entre pares (no confundir por peer-to-peer).
+                    Generalmente se utilizan lineas dedicadas alquiladas.
+                </li>
+                <li>De estrella: varios dispositivos conectados punto a punto. La version punto a punto seria muy costosa en este caso por lo 
+                    que se usa normalmente una conexion radial por donde varios dispositivos pueden acceder a la misma interfaz de otro dispositivo.
+                </li>
+                <li>Malla completa: usando la topologia radial, cada dispositivo tendria una interfaz radial en direccion a los demas dispositivos formando una malla</li>
+                <li>De seguridad preventiva doble: este caso se usa para aumentar la seguridad de los datos usando ,por ejemplo, dos dispositivos radiales a los que le llegara
+                    la misma informacion teniendo una redundancia. Si no les llega la misma informacion es que ha sido alterada.
+                </li>
+            </ul>
+        <br>
+        Luego, el acceso a redes WAN puede ser tanto privado como publico.
+        <br>
+        <img src="https://labraca.github.io/Trabajo_WAN_TAR/img/image.png">
+        <br>
+        Una linea arrendada, como aparece en la imagen, es una forma privada de las teconologias WAN que consiste en una linea
+        bidireccional entre varias localizaciones la cual es alquilada al ISP. A diferencia de las lineas conmutadas, las dedicadas son mas privadas ya que
+        se conectan especificamente las localizaciones que uno busca pero suelen ser mas costosas. Un ejemplo de linea conmutada seria la telefonia fija, por donde a través de los
+        digitos redireccionamos la linea hasta el telefono al que queremos conectarnos. Este tipo de linea es bastante insegura pero barata dado la cantidad de suscriptores que contiene.
+        <br>
+        Para una empresa la linea mas buscada seria la arrendada dado su capacidad de telecomunicacion privada
+        pero debido a su coste hay que tener cuidado con ella. 
+    </h5>
+</html>
