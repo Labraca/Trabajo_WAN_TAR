@@ -16,7 +16,7 @@ h5{
 table.paleBlueRows {
   font-family: "Times New Roman", Times, serif;
   border: 1px solid #FFFFFF;
-  width: 350px;
+  width: 550px;
   height: 200px;
   text-align: left;
   border-collapse: collapse;
@@ -58,21 +58,21 @@ table.paleBlueRows tfoot td {
             <li><a href=#8-1>8.1	Descripción	general	de	las	tecnologías	WAN.</a><ul>
                 <li><a href="#8-1-1"> 8.1.1	Tecnologías	WAN:	Descripción	general.</a></li>
             </ul></li>
-            <li>8.2.	Conexiones	punto	a	punto.<ul>
-                <li>8.2.1	Descripción	general	de	punto	a	punto	serie.</li>
-                <li>8.2.2	Operación	de	PPP.</li>
-                <li>8.2.3	Implementación	de	PPP.</li>
-                <li>8.2.4	Solución	de	problemas	de	conectividad	WAN.</li>
+            <li><a href="#8-2">8.2.	Conexiones	punto	a	punto.</a><ul>
+                <li><a href="#8-2-1">8.2.1	Descripción	general	de	punto	a	punto	serie.</a></li>
+                <li><a href="#8-2-2">8.2.2	Operación	de	PPP.</a></li>
+                <li><a href="#8-2-3">8.2.3	Implementación	de	PPP.</a></li>
+                <li><a href="#8-2-4">8.2.4	Solución	de	problemas	de	conectividad	WAN.</a></li>
             </ul></li>
-            <li> 8.3.	Conexiones	de	sucursal.<ul>
-                <li> 8.3.1	Conexiones	de	acceso	remoto.</li>
-                <li>8.3.2	PPPoE.</li>
-                <li>8.3.3	VPN.</li>
-                <li>8.3.4	GRE.</li>
-                <li>8.3.5	eBGP.</li>
+            <li><a href="#8-3"> 8.3.	Conexiones	de	sucursal.</a><ul>
+                <li> <a href="#8-3-1">8.3.1	Conexiones	de	acceso	remoto.</a></li>
+                <li><a href="#8-3-2">8.3.2	PPPoE.</a></li>
+                <li><a href="#8-3-3">8.3.3	VPN.</a></li>
+                <li><a href="#8-3-4">8.3.4	GRE.</a></li>
+                <li><a href="#8-3-5">8.3.5	eBGP.</a></li>
             </ul></li>
-            <li>8.4	Glosario.</li>
-            <li>8.5	Bibliografía.</li>
+            <li><a href="#8-4">8.4	Glosario.</a></li>
+            <li><a href="#8-5">8.5	Bibliografía.</a></li>
         </ul></h3>
     /-------------------------------------------------------------------------------------------/
     <h2 id="8-1">8.1	Descripción	general	de	las	tecnologías	WAN.</h2>
@@ -117,7 +117,7 @@ table.paleBlueRows tfoot td {
         <br>
         Luego, el acceso a redes WAN puede ser tanto privado como publico.
         <br>
-        <img src="https://labraca.github.io/Trabajo_WAN_TAR/img/image.png" style="width: 50%;">
+        <img src="https://labraca.github.io/Trabajo_WAN_TAR/img/skere.JPG" style="width: 50%;">
         <br>
         Una linea arrendada, como aparece en la imagen, es una forma privada de las teconologias WAN que consiste en una linea
         bidireccional entre varias localizaciones la cual es alquilada al ISP. A diferencia de las lineas conmutadas, las dedicadas son mas privadas ya que
@@ -167,5 +167,150 @@ table.paleBlueRows tfoot td {
             </tr>
             </tbody>
             </table>
+            <p></p>
+     </h5>
+    <h2 id="8-2">8.2.	Conexiones	punto	a	punto.</h2>
+    <h3 id="8-2-1">8.2.1	Descripción	general	de	punto	a	punto	serie.</h3>
+    <h5>
+      <p>
+        Como antes se mencionaba, las conexiones punto a punto son generalmente las mas usadas
+        en enlaces WAN , son alquiladas a la empresa proveedora de servicios y se basan en la conexion directa entre dos o varios dispositivos manteniendo un estandar de velocidad.
+        Para manejar estas lineas se usan los protocolos PPP y HDLC, capaces de manejar la autenticación, la compresión y la detección de errores, de controlar la calidad de los enlaces, y de agrupar lógicamente varias conexiones seriales para compartir la carga 
+        y el encargado para las interfaces seriales de los routers. 
+      </p>
+    </h5>
+    <h3 id="8-2-2">8.2.2	Operación	de	PPP.</h3>
+    <h5>
+      <p>
+        El protocolo de encapsulacion PPP se situa en la capa de enlace de datos y red, se basa en el protocolo HDLC el cual es el predeterminado en la conexion de routers CISCO. Ya que a veces se 
+        debe conectar a diferentes tipos de interfaces, se desarrolló el protocolo PPP para que sirviese en diferentes dispositivos ademas de en varios protocolos como el IPv4 e IPv6 por lo que podemos usar 
+        operaciones de capa 2 y 3.
+      </p>
+      <p>
+        Se lleva utilizando para dar conexion a internet a los usuarios de lineas de circuito conmutado
+        pues estos al usar modem solo pueden manejar operaciones de capa 2.
+      </p>
+      <p>
+        El protocolo PPP es un protocolo estructurado que toca varias capas de red, enlace de datos y capa fisica. Para poder manejar la capa de red se usan varios protocolos NCP
+        dependiendo del protocolo de control que se use (IPv4 o IPv6) y garantizar el encapsulamiento y negociacion. Para la capa de enlace se utilizacion 
+        el protocolo LCP y cumple una función en el establecimiento, la configuración y la prueba de la conexión de enlace de datos, este protocolo es el 
+        encargado en establecer el enlace punto a punto, configura el tamaño e los paquetes, detecta errores, finaliza el enlace y comprueba la indentidad de 
+        los dispositivos, entre otras.  
+      </p>
+      <img src="https://labraca.github.io/Trabajo_WAN_TAR/img/image.png" style="width: 50%;">
+      <p>
+        Los pasos para el enlace PPP son los siguientes:
+        <ul>
+          <li><b>PASO 1: Establecimiento del enlace y negociación de la configuración:</b> El protocolo LCP se encarga de enlazar los dispositivos, mantener la conexion y terminarla:<br><ul>
+            <li>Establecimiento de enlace enviando un mensaje LCP-Configure-Request con la configuracion deseada y se espera un LCP-Configure-Ack o un NAK de rechazo de configuracion</li>
+            <li>Los NCP se configuran y LCP pasa a mantenimiento del enlace</li>
+            <li>Se mandan mensajes Echo y reciben Echo-reply para comprobar el enlace, tambien se usan los Code-reject en caso de un envio invalido</li>
+            <li>Por último, el LCP tambien se encarga de la finalización del enlace con un LCPTerminate-Request y su consecuente respuesta</li>
+          </ul></li>
+        <li><b>PASO 2 (Opcional):Determinar la calidad del enlace</b></li>
+        <li><b>PASO 3: Negociacion del protocolo de red a utilizar</b></li>
+        </ul>
+      </p>
+    </h5>
+    <h3 id="8-2-3">8.2.3	Implementación	de	PPP.</h3>
+    <h5>
+      <p>
+        Para incluir el protocolo PPP en un router se usa el comando <i>"encapsulation ppp"</i> en la interfaz que conecta con la linea PtP.
+        En la configuracion podemos detallar varias cosas como el protocolo de autentificacion a usar, la compresion, deteccion de errores, devolucion de llamada y el multienlace.
+      </p>
+      <p>
+        Para la configuracion de la compresion se usa el comando <i>"compress"</i> y una opcion <i>"preditor"</i> o <i>"stac"</i> en la configuracion de la interfaz,
+        y para crear un grupo de multi enlace se usa <i>ppp multilink [group]</i>.
+      </p>
+    </h5>
+    <h3 id="8-2-4">8.2.4	Solución	de	problemas	de	conectividad	WAN.</h3>
+    <h5>
+      <p>
+        Para comprobar que el protocolo esta activo se usa los comandos <i>"show interface serial"</i> y <i>"show ppp multilink"</i>, para comprobar que esta habilitado y 
+        obtener informacion del multienlace respectivamente. Pero para la solucion de los problemas se usa el comando <i>"debug ppp {packet | negotiayion | error | authentication | compresion | cbcp}"</i>
+        para mostrar los paquetes transmitidos, los pertenecientes a la fase de negociacion de la configuracion, autentificacion, compresion y los errores de protocolos respectivamente. De esta manera se obtiene
+        la informacion necesaria para la resolucion de problemas.
+      </p>
+    </h5>
+    <h2 id="8-3">8.3.	Conexiones	de	sucursal.</h2>
+    <h3 id="8-3-1">8.3.1	Conexiones	de	acceso	remoto.</h3>
+    <h5>
+      <p>
+        En algunas situaciones necesitamos asegurar un canal privado para un trabajador
+        remoto o una pequeña sucursal. Para esto usamos VPN privadas, protocolos para trabajar sobre ethernet, etc.
+        <br>
+        Actualmente, la conexion a internet desde el domicilio suele ser por cable coaxial o fibra por medio
+        de una linea de abonado digital simetrica (DSL) o asimetrica (ADSL) refiriendose a la velocidad de conexion.
+      </p>
+    </h5>
+    <h3 id="8-3-2">8.3.2	PPPoE.</h3>
+    <h5>
+      <p>
+        El protocolo PPP se considera bastante valioso debido a su capacidad de autentificacion, pero este funcionaba en lineas antiguas,
+        con la entrada del Ethernet este protocolo ya no es soportado por lo que se tuvo que desarrollar un protocolo nuevo, el PPPoE.
+        Para poder enviar tramas PPP primero hace falta enviar el paquete por el cable Ethernet, PPPoE se encarga de crear un tunel en estas tramas hasta llegar a las seriales.
+        
+    </h5>
+    <h3 id="8-3-3">8.3.3	VPN.</h3>
+    <h5>
+      <p>
+        VPN es una forma bastante rentable de dar un metodo de conexion seguro a traves de redes publicas como
+        Internet, creando tuneles a través de esta. La base de este metodo es controlar estrictamente el acceso a la red VPN 
+        por medio de autetificacion y cifrado.
+        Hay varios tipos de VPN:
+          <ul>
+            <li><b>VPN sitio a sitio.</b> En terminos simples, los routers al principio y al final de la conexion son los unicos que 
+            conocen la configuracion de la VPN, al enviar algun paquete el router encapsula y cifra el mensaje para que los
+            host por lo que vaya a pasar el paquete no obtengan la informacion y esta es desempaquetada al final del envio. De esta manera puedes
+            unir varias redes.</li>
+            <li><b>VPN de acceso remoto.</b> Esta forma de la VPN sirve para los trabajadores que inividualmente buscan trabajar remotamente. Normalmente debe instalar software para poder conectar el equipo a la VPN.</li>
+            <li><b>DMVPN, VPN dinamica multipunto.</b> Es una forma de crear VPN multiples</li>
+          </ul>
+      </p>
+    </h5>
+    <h3 id="8-3-4">8.3.4	GRE.</h3>
+    <h5>
+      <p>
+        GRE es un protocolo de tunnelling para VPN desarrollado por cisco, se utiliza para encapsular varios formatos de 
+        paquete dentro de tuneles IP. Se usa un encabezado con la IP y el numero 47 en el campo de protocolo para señalar
+        que es una encapsulacion GRE. Principalmente este metodo no tiene una seguridad robusta.
+      </p>
+    </h5>
+    <h3 id="8-3-5">8.3.5	eBGP.</h3>
+    <h5>
+      <p>
+        Mientras que los protocolos RIP, OSPF y EGRP son protocolos de gateway interior, el BGP se denomina
+        como de exterior. Se utiliza para el intercambio de informacion entre sistemas autonomos como ISP y proveedores de contenido (Youtube,Netflix,etc.)
+        <br>
+        Funciona muy parecido a los protocolos RIP, donde se intercambian tablas de routing de una red autonoma a otra diciendoles
+        a que redes estan conectadas formandose así un mapa con el que poder mandar paquetes lejos. Se utilizan tambien metricas con las que 
+        saber por donde mandar un mensaje y llegue lo mas rapido y seguro posible.
+        <br>
+        Los routers que intercambian informacion con las demas redes externas los llamamos eBGP y los internos iBGP.
+        <br>
+        Este protocolo esta sujeto a desventajas parecidas al routing dinamico, si solo hay una unica red con la intercambiar conexion es mucho mas
+        aconsejable usar rutas estaticas.
+      </p>
+    </h5>
+    <h2 id="8-4">8.4	Glosario.</h2>
+    <h2 id="8-5">8.5	Bibliografía.</h2>
+    <h5>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Internet#Infrastructure">https://en.wikipedia.org/wiki/Internet#Infrastructure</a></li>
+        <li><a href="https://es.wikipedia.org/wiki/Red_punto_a_punto">https://es.wikipedia.org/wiki/Red_punto_a_punto</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Leased_line">https://en.wikipedia.org/wiki/Leased_line</a></li>
+        <li><a href="https://prezi.com/w8zoqs5h2363/lineas-dedicadas-y-conmutadas/">https://prezi.com/w8zoqs5h2363/lineas-dedicadas-y-conmutadas/</a></li>
+        <li><a href="https://www.ibm.com/support/knowledgecenter/es/ssw_ibm_i_71/rzaiy/rzaiyframerelay.html">https://www.ibm.com/support/knowledgecenter/es/ssw_ibm_i_71/rzaiy/rzaiyframerelay.html</a></li>
+        <li><a href="https://www.ecured.cu/Frame_relay#Transportar_voz_sobre_Frame_Relay">https://www.ecured.cu/Frame_relay#Transportar_voz_sobre_Frame_Relay</a></li>
+        <li>NetAcad: RS&4 Capitulos del 1 al 3</li>
+        <li><a href="https://es.wikipedia.org/wiki/High-Level_Data_Link_Control">https://es.wikipedia.org/wiki/High-Level_Data_Link_Control</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Network_Control_Protocol">https://en.wikipedia.org/wiki/Network_Control_Protocol</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Link_Control_Protocol">https://en.wikipedia.org/wiki/Link_Control_Protocol</a></li>
+        <li><a href="https://es.wikipedia.org/wiki/CHAP">https://es.wikipedia.org/wiki/CHAP</a></li>
+        <li><a href=https://www.youtube.com/watch?v=_aLmzq-23pE>Youtube: How the BGP works</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Internet#Infrastructure">https://en.wikipedia.org/wiki/Internet#Infrastructure</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Internet#Infrastructure">https://en.wikipedia.org/wiki/Internet#Infrastructure</a></li>
+
+      </ul>
     </h5>
 </html>
